@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional MLBB Ingame Overlay - Amanecer eSports</title>
+    <link rel="stylesheet" href="css/ingame.css?v=999">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="ingame-overlay">
+        
+        <div class="m7-scoreboard">
+            
+            <!-- TEAM LEFT SIDE -->
+            <div class="team-side left-side">
+                <div class="team-logo-outer">
+                    <img src="https://via.placeholder.com/100" id="logo-left" class="main-logo">
+                </div>
+                <div class="team-data">
+                    <div class="stats-row">
+                        <div class="stat-box"><img src="assets/turtle_icon.png" class="icon-turtle"> <span id="turtle-left">0</span></div>
+                        <div class="stat-box"><img src="assets/lord_icon.png" class="icon-lord"> <span id="lord-left">0</span></div>
+                        <div class="stat-box"><img src="assets/turret_icon.png" class="icon-turret"> <span id="turrets-left">0</span></div>
+                    </div>
+                    <div class="name-row">
+                        <span id="name-left">AURORA GAMING PH</span>
+                        <div class="score-bars" id="score-left">
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="kills-panel">
+                    <span id="kills-left">0</span>
+                </div>
+            </div>
+
+            <!-- CENTER LOGO & TIME -->
+            <div class="center-panel">
+                <div class="timer-display" id="game-time">00:00</div>
+                <div class="tournament-logo-container">
+                    <img src="https://via.placeholder.com/150x80/ff8c00/000?text=AMANECER" id="tourney-logo">
+                </div>
+            </div>
+
+            <!-- TEAM RIGHT SIDE -->
+            <div class="team-side right-side">
+                <div class="kills-panel">
+                    <span id="kills-right">0</span>
+                </div>
+                <div class="team-data">
+                    <div class="stats-row">
+                        <div class="stat-box"><img src="assets/turret_icon.png" class="icon-turret"> <span id="turrets-right">0</span></div>
+                        <div class="stat-box"><img src="assets/lord_icon.png" class="icon-lord"> <span id="lord-left">0</span></div>
+                        <div class="stat-box"><img src="assets/turtle_icon.png" class="icon-turtle"> <span id="turtle-right">0</span></div>
+                    </div>
+                    <div class="name-row">
+                        <div class="score-bars" id="score-right">
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </div>
+                        <span id="name-right">TEAM LIQUID</span>
+                    </div>
+                </div>
+                <div class="team-logo-outer">
+                    <img src="https://via.placeholder.com/100" id="logo-right" class="main-logo">
+                </div>
+                
+                <!-- INTEGRATED ADS PANEL -->
+                <div class="ads-panel">
+                    <div class="ads-box">
+                        <div class="ads-label">OFFICIAL PARTNER</div>
+                        <img src="" id="ads-logo" onerror="this.style.opacity='0'; console.error('Sponsor logo failed to load')">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- RECENT KILL/OBJECTIVE NOTIFICATION -->
+        <div id="objective-notif" class="notif-container">
+            <div class="notif-content">
+                <div class="notif-top-bar"></div>
+                <div class="notif-body">
+                    <img src="" id="notif-icon" class="notif-icon">
+                    <div class="notif-text">
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <img src="" id="notif-team-logo" style="width: 45px; height: 45px; object-fit: contain;">
+                            <span id="notif-team" class="team-text">TEAM NAME</span>
+                        </div>
+                        <span id="notif-action" class="action-text">HA DERROTADO AL LORD</span>
+                    </div>
+                </div>
+                <div class="notif-bottom-bar"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/ingame.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intermission Overlay - Amanecer eSports</title>
+    <link rel="stylesheet" href="css/intermission.css?v=1">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="overlay-container">
+        
+        <!-- TOP HEADER: BRANDING & LOCATION -->
+        <header class="top-header">
+            <div class="knockout-title">
+                <span class="main-text" id="knockout-main">KNOCKOUT</span>
+                <span class="sub-text" id="knockout-sub">DÍA 1</span>
+            </div>
+            
+            <div class="tournament-logo-header">
+                <img src="https://via.placeholder.com/150x60/ff8c00/000?text=AMANECER" id="tourney-logo">
+            </div>
+
+            <div class="top-leaderboard-container">
+                <div id="top-banner-slot" class="leaderboard-slot">
+                    <img id="top-banner-img" src="" style="display:none;width:100%;height:100%;object-fit:cover;">
+                    <video id="top-banner-video" src="" autoplay loop muted style="display:none;width:100%;height:100%;object-fit:cover;"></video>
+                </div>
+            </div>
+
+            <div class="location-tag">
+                BS AS - ARGENTINA <span class="arrow">◀</span>
+            </div>
+        </header>
+
+        <!-- MAIN CONTENT AREA -->
+        <main class="main-grid">
+            
+            <!-- LEFT SIDEBAR: AGENDA -->
+            <aside class="sidebar-agenda">
+                <div class="agenda-header-container">
+                    <div class="agenda-header">AGENDA DEL DÍA</div>
+                </div>
+
+                <div class="match-list" id="match-list">
+                    <!-- Dynamic matches injected by JS -->
+                    <div class="match-card active">
+                        <div class="match-info">CARGANDO...</div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- CENTER/RIGHT AREA: COUNTDOWN & VIDEO -->
+            <section class="content-area">
+                <div class="lightning-bolt"></div>
+                
+                <div class="timer-container">
+                    <div class="timer-label">EMPEZAMOS EN :</div>
+                    <div class="timer-value" id="countdown">00:00</div>
+                </div>
+
+                <div class="sponsor-frame">
+                    <div class="sponsor-video-container">
+                        <video id="sponsor-video" src="" autoplay loop muted style="width: 100%; height: 100%; object-fit: contain;"></video>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER TICKER -->
+        <footer class="footer-ticker">
+            <div class="ticker-wrap" id="ticker-wrap">
+                <!-- Dynamic ticker items injected by JS -->
+                <div class="ticker-item"><span>▶</span> CARGANDO NOTICIAS...</div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="js/intermission.js"></script>
+</body>
+</html>
