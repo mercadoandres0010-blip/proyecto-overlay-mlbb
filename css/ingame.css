@@ -1,0 +1,356 @@
+:root {
+    --sunrise-orange: #ff8c00;
+    --royal-purple: #8e44ad;
+    --deep-purple: #2c003e;
+    --white: #ffffff;
+    --dark-bg: rgba(10, 5, 20, 0.98);
+    --font-family: 'Rajdhani', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: transparent;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: var(--font-family);
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+}
+
+.ingame-overlay {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+/* TOP SPONSORS BAR (SP1, SP2, SP3, SP4) */
+.top-sponsors-bar {
+    position: absolute;
+    top: 5px;
+    display: flex;
+    gap: 10px;
+    z-index: 50;
+}
+
+.sp-slot {
+    background: rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,140,0,0.3);
+    width: 80px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transform: skewX(-10deg);
+}
+
+.sp-slot img {
+    width: 60px;
+    height: 25px;
+    object-fit: contain;
+    transform: skewX(10deg);
+    filter: drop-shadow(0 0 5px rgba(255,255,255,0.5));
+}
+
+/* SCOREBOARD MAIN BAR (INTEGRATED SINGLE PIECE) */
+.m7-scoreboard {
+    position: absolute;
+    top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+}
+
+.team-side {
+    display: flex;
+    align-items: center;
+    height: 140px;
+}
+
+/* TEAM LOGOS */
+.team-logo-outer {
+    background: transparent;
+    border: 4px solid var(--sunrise-orange);
+    width: 140px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transform: skewX(-10deg);
+}
+.left-side .team-logo-outer { border-left-width: 8px; margin-right: -15px; }
+.right-side .team-logo-outer { border-right-width: 8px; margin-left: -15px; }
+
+.main-logo {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    transform: skewX(10deg);
+    /* Remove filters that can make edges look white */
+    filter: none;
+}
+
+/* TEAM DATA RECTANGLES */
+.team-data {
+    display: flex;
+    flex-direction: column;
+    width: 480px;
+}
+
+.stats-row {
+    background: linear-gradient(180deg, rgba(15, 5, 30, 0.95) 0%, rgba(5, 5, 15, 1) 100%);
+    height: 75px; /* Taller for stacked layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    border-bottom: 3px solid rgba(255, 204, 0, 0.4);
+    transform: skewX(-10deg);
+}
+
+.name-row {
+    background: linear-gradient(90deg, rgba(255, 140, 0, 0.05), rgba(255, 140, 0, 0.4));
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    transform: skewX(-10deg);
+}
+
+.name-row span, .stats-row .stat-box {
+    transform: skewX(10deg);
+}
+
+/* SCORE DOTS - BO3 Style */
+.score-bars {
+    display: flex;
+    gap: 8px;
+    margin: 0 20px;
+    transform: skewX(10deg);
+}
+
+.score-bars .dot {
+    width: 24px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+}
+
+#score-left .dot.active {
+    background: var(--sunrise-orange);
+    box-shadow: 0 0 10px var(--sunrise-orange);
+    border-color: #fff;
+}
+
+#score-right .dot.active {
+    background: var(--royal-purple);
+    box-shadow: 0 0 10px var(--royal-purple);
+    border-color: #fff;
+}
+
+/* NEW SEPARATE HIGH-FIDELITY ICONS (NANO BANANO STYLE) */
+.stat-box {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    z-index: 1000;
+}
+
+[class^="icon-"] {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    /* Blend mode 'screen' hides the black background and keeps the white icon */
+    mix-blend-mode: screen; 
+    /* Gold color filter for silhouettes */
+    filter: sepia(1) saturate(10) hue-rotate(-10deg) brightness(1.2) drop-shadow(0 0 5px rgba(255, 204, 0, 0.5));
+    display: block !important;
+}
+
+.stat-box span {
+    font-weight: 900;
+    font-size: 26px;
+    color: #fff;
+    text-shadow: 0 4px 10px rgba(0,0,0,1);
+    font-family: 'Rajdhani', sans-serif;
+    line-height: 1;
+}
+
+/* KILLS */
+.kills-panel {
+    background: #000;
+    width: 90px;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    font-weight: 900;
+    border-bottom: 5px solid var(--sunrise-orange);
+    z-index: 5;
+    transform: skewX(-10deg);
+}
+
+.kills-panel span { transform: skewX(10deg); }
+#kills-left { color: var(--sunrise-orange); }
+#kills-right { color: var(--royal-purple); }
+
+/* CENTER PANEL */
+.center-panel {
+    width: 260px;
+    height: 100%;
+    background: var(--dark-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 -15px;
+    z-index: 20;
+    border-bottom: 4px solid var(--sunrise-orange);
+    transform: skewX(-10deg);
+}
+
+.timer-display {
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--white);
+    transform: skewX(10deg);
+}
+
+.tournament-logo-container {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -5px;
+}
+
+#tourney-logo { width: 140px; transform: skewX(10deg); }
+
+/* INTEGRATED ADS PANEL (One piece with the bar) */
+.ads-panel {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    height: 100%;
+}
+
+.ads-box {
+    background: linear-gradient(90deg, #111, #222);
+    border: 3px solid var(--sunrise-orange);
+    width: 320px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: skewX(-10deg);
+    margin-left: -5px;
+    box-shadow: inset 0 0 20px rgba(255,140,0,0.2);
+}
+
+.ads-label {
+    font-size: 11px;
+    font-weight: 900;
+    color: var(--sunrise-orange);
+    letter-spacing: 2px;
+    transform: skewX(10deg);
+    margin-bottom: 5px;
+}
+
+#ads-logo {
+    width: 250px;
+    height: 60px;
+    object-fit: contain;
+    transform: skewX(10deg);
+}
+
+/* NOTIFICATIONS */
+.notif-container {
+    position: absolute;
+    top: 350px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    width: 700px;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 1000;
+}
+
+.notif-container.active {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+}
+
+.notif-content {
+    background: linear-gradient(90deg, rgba(10, 5, 20, 0.98), rgba(142, 68, 173, 0.4));
+    border-left: 10px solid var(--sunrise-orange);
+    border-right: 10px solid var(--sunrise-orange);
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 140, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.notif-body {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.notif-icon {
+    width: 150px; /* Larger like the M7 notification */
+    height: 150px;
+    filter: sepia(1) saturate(10) hue-rotate(-10deg) brightness(1.2) drop-shadow(0 0 20px var(--sunrise-orange));
+    object-fit: contain;
+    mix-blend-mode: screen; /* Removes black background of generated icons to show only the gold silhouette */
+    display: block;
+}
+
+.notif-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.team-text { 
+    font-size: 32px; 
+    font-weight: 800; 
+    color: var(--sunrise-orange); 
+    letter-spacing: 2px;
+}
+
+.action-text { 
+    font-size: 58px; 
+    font-weight: 900; 
+    color: #fff; 
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+/* Kills Pulse Animation */
+@keyframes pulse {
+    0% { transform: scale(1) skewX(10deg); text-shadow: 0 0 0px var(--sunrise-orange); }
+    50% { transform: scale(1.3) skewX(10deg); text-shadow: 0 0 30px var(--sunrise-orange); }
+    100% { transform: scale(1) skewX(10deg); text-shadow: 0 0 0px var(--sunrise-orange); }
+}
+
+.kills-pulse {
+    animation: pulse 0.5s ease-out;
+}
