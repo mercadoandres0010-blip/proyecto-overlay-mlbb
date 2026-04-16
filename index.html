@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>MLBB Professional Overlay M7 - Amanecer eSports</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="overlay-container">
+        
+        <!-- TOP ROW: BANS & COACHES -->
+        <div class="top-row-bans">
+            <div class="team-bans-wrap left">
+                <div class="ban-mini-list" id="bans-left"></div>
+                <div class="coach-box">
+                    <span class="label">COACH</span>
+                    <span class="name" id="coach-left">COACH NAME</span>
+                </div>
+            </div>
+
+            <div class="team-bans-wrap right">
+                <div class="ban-mini-list" id="bans-right"></div>
+                <div class="coach-box">
+                    <span class="label">COACH</span>
+                    <span class="name" id="coach-right">COACH NAME</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timer & Logo (Floating) -->
+        <div class="central-branding">
+            <img src="https://via.placeholder.com/150/ff8c00/000?text=LOGO" id="tournament-logo" class="m7-logo">
+        </div>
+
+        <!-- MAIN OVERLAY BAR -->
+        <div class="main-bar">
+            
+            <!-- TEAM LEFT PICKS -->
+            <div class="picks-box left" id="players-left">
+                <!-- Dynamic Slots -->
+            </div>
+
+            <!-- CENTRAL HUD STRIP -->
+            <div class="center-hud-strip">
+                <div class="match-details">
+                    <div class="stage" id="match-info-top">KNOCKOUT</div>
+                    <div class="date" id="match-stage-title">DAY 1 - MATCH 2</div>
+                </div>
+
+                <div class="teams-vs-row">
+                    <div class="team-info left">
+                        <img id="team-logo-left" src="" alt="logo">
+                        <span class="abbr" id="team-name-left-abbr">YG</span>
+                    </div>
+                    <div class="team-info right">
+                        <img id="team-logo-right" src="" alt="logo">
+                        <span class="abbr" id="team-name-right-abbr">AUR</span>
+                    </div>
+                </div>
+
+                <div class="broken-walls-label">BROKEN WALLS</div>
+                <div class="timer-box" id="draft-timer">41</div>
+            </div>
+
+            <!-- TEAM RIGHT PICKS -->
+            <div class="picks-box right" id="players-right">
+                <!-- Dynamic Slots -->
+            </div>
+
+            <!-- SPONSOR OVERLAY BAR -->
+            <div class="sponsor-bar" id="sponsor-footer-container">
+                <!-- Dynamic Sponsors -->
+            </div>
+        </div>
+
+        <!-- Status Banner -->
+        <div id="hero-pick-banner" class="hero-banner">PICKING HERO...</div>
+
+    </div>
+
+    <script src="js/hero-database.js?v=4"></script>
+    <script src="js/app.js?v=4"></script>
+</body>
+</html>
